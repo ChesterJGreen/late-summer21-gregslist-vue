@@ -20,8 +20,8 @@
               >Cars <span class="sr-only">(current)</span></router-link
             >
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Jobs</a>
+          <li>
+          <router-link class="nav-link navbar-brand" :to="{name: 'Job'}" >Jobs</router-link>
           </li>
           <li>
           <router-link class="nav-link navbar-brand" :to="{name: 'House'}" >Houses</router-link>
