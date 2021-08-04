@@ -23,8 +23,8 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Jobs</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Houses</a>
+          <li>
+          <router-link class="nav-link navbar-brand" :to="{name: 'Home'}" >Houses</router-link>
           </li>
         </ul>
       </div>

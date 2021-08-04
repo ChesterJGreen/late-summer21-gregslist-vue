@@ -11,6 +11,12 @@
         <CarCard :car="c"/>
       </div>
     </div>
+    <div class="row">
+      <div class="col-4" v-for="h in homes" :key="h.id">
+        <!-- Data passed through prop ':car' to child -->
+        <HomeCard :home="h"/>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -20,6 +26,7 @@ import {AppState} from '../AppState.js'
 import {carsService } from '../services/CarsService'
 import CarCard from '../components/CarCard.vue'
 import CarForm from '../components/CarForm.vue'
+import {homesService} from '../services/HomesService'
 
 export default {
   name: 'Home',
@@ -33,17 +40,28 @@ export default {
       } catch (error) {
         console.error(error)
       }
+    }),
+    onMounted(async ()=>{
+      try {
+        await homesService.getHomes()
+      } catch (error) {
+        console.error (error)
+      }
     })
     return {
       // state,
       // computeds
-      cars: computed(() => AppState.cars)
+      cars: computed(() => AppState.cars),
+      homes: computed(() => AppState.homes),
+      // jobs: computed(() => AppState.jobs)
       // methods
     }
   },
   components: {
     CarCard,
-    CarForm
+    CarForm,
+    // HomeCard,
+    // HomeForm
   }
 }
 </script>
