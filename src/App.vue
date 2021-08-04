@@ -24,7 +24,7 @@
             <a class="nav-link" href="#">Jobs</a>
           </li>
           <li>
-          <router-link class="nav-link navbar-brand" :to="{name: 'Home'}" >Houses</router-link>
+          <router-link class="nav-link navbar-brand" :to="{name: 'House'}" >Houses</router-link>
           </li>
         </ul>
       </div>

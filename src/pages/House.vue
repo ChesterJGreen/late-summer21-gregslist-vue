@@ -1,14 +1,14 @@
 <template>
-  <div class="home container-fluid">
+  <div class="house container-fluid">
     <div class="row">
       <div class="col">
-        <CarForm />
+        <HomeForm />
       </div>
     </div>
-    <div class="row">
-      <div class="col-4" v-for="c in cars" :key="c.id">
+        <div class="row">
+      <div class="col-4" v-for="h in homes" :key="h.id">
         <!-- Data passed through prop ':car' to child -->
-        <CarCard :car="c"/>
+        <HomeCard :home="h"/>
       </div>
     </div>
   </div>
@@ -17,39 +17,36 @@
 <script>
 import { computed, onMounted } from '@vue/runtime-core'
 import {AppState} from '../AppState.js'
-import {carsService } from '../services/CarsService'
-import CarCard from '../components/CarCard.vue'
-import CarForm from '../components/CarForm.vue'
-
+import {homesService} from '../services/HomesService'
+import HomeCard from '../components/HomeCard.vue'
+import HomeForm from '../components/HomeForm.vue'
 
 export default {
-  name: 'Home',
+  name: 'House',
   setup(){
     // state
 
     // mounted
+    
     onMounted(async ()=>{
       try {
-        await carsService.getCars()
+        await homesService.getHomes()
       } catch (error) {
-        console.error(error)
+        console.error (error)
       }
     })
-    
     return {
       // state,
       // computeds
-      cars: computed(() => AppState.cars),
      
+      homes: computed(() => AppState.homes),
       // jobs: computed(() => AppState.jobs)
       // methods
     }
   },
   components: {
-    CarCard,
-    CarForm,
-    // HomeCard,
-    // HomeForm
+    HomeCard,
+    HomeForm
   }
 }
 </script>
