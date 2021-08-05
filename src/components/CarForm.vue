@@ -1,9 +1,9 @@
 <template>
-  <div class="car-form">
-    <form class="d-flex" @submit.prevent="createCar">
-      <div class="form-group">
-        <label for="make">Make</label>
-        <input
+  <div class="car-form row">
+    <form class="d-flex col-md-10 m-2 p-3 border bg-see shadow rounded" @submit.prevent="createCar">
+      <div class="row">
+      <div class="form-group col-md-2">
+         <input
           type="text"
           name="make"
           v-model="state.newCar.make"
@@ -12,8 +12,7 @@
           required
         />
       </div>
-      <div class="form-group">
-        <label for="model">Model</label>
+      <div class="form-group col-md-2">
         <input
           type="text"
           name="model"
@@ -23,21 +22,19 @@
           required
         />
       </div>
-      <div class="form-group">
-        <label for="year">Year</label>
-        <input
+      <div class="form-group col-md-1.5">
+         <input
           type="number"
           name="year"
           v-model="state.newCar.year"
           class="form-control"
-          placeholder="Year..."
+          placeholder="Year"
           required
           min="1950"
           max="2021"
         />
       </div>
-      <div class="form-group">
-        <label for="price">Price</label>
+      <div class="form-group col-md-1">
         <input
           type="number"
           name="price"
@@ -48,18 +45,19 @@
           min="1"
         />
       </div>
-      <div class="form-group">
-        <label for="imgUrl">Image Url</label>
+      <div class="form-group col-md-4 mx-2">
         <input
           type="text"
           name="imgUrl"
           v-model="state.newCar.imgUrl"
           class="form-control"
-          placeholder="Url..."
+          placeholder="Image Url..."
         />
       </div>
-      <div class="form-group">
-        <label for="description">Description</label>
+      <div class="d-flex flex-column align-items-end col-md-1.5 mx-3">
+        <button type="submit" class="btn btn-success">Add Job</button>
+      </div>
+      <div class="form-group col-md-12">
         <input
           type="text"
           name="description"
@@ -69,8 +67,6 @@
           maxlength="240"
         />
       </div>
-      <div class="d-flex align-items-center">
-        <button type="submit" class="btn btn-outline-success">Add</button>
       </div>
     </form>
   </div>
@@ -105,5 +101,8 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
+<style scoped>
+.bg-see {
+    background: rgba(17, 0, 255, 0.192)
+  }
 </style>

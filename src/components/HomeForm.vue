@@ -1,8 +1,8 @@
 <template>
-  <div class="home-form">
-    <form class="d-flex" @submit.prevent="createHome">
-      <div class="form-group">
-        <label for="year">Year</label>
+  <div class="home-form row">
+    <form class="d-flex col-md-10 m-2 p-3 border bg-see shadow rounded" @submit.prevent="createHome">
+      <div class="row">
+      <div class="form-group col-md-1.5 p-1 pl-3">
         <input
           type="number"
           name="year"
@@ -14,45 +14,41 @@
           max=2021
         />
       </div>
-      <div class="form-group">
-        <label for="levels">Levels</label>
+      <div class="form-group col-md-1.5 p-1 pl-3">
         <input
           type="number"
           name="levels"
           v-model="state.newHome.levels"
           class="form-control"
-          placeholder="LVLs..."
+          placeholder="Levels..."
           required
           min=1
           max=20
         />
       </div>
-      <div class="form-group">
-        <label for="bedrooms">Bed</label>
+      <div class="form-group col-md-1.5 p-1 pl-3">
         <input
           type="number"
           name="bedrooms"
           v-model="state.newHome.bedrooms"
           class="form-control"
-          placeholder="Bedrooms..."
+          placeholder="Beds..."
           required
           min=1
           max=20
         />
       </div>
-      <div class="form-group">
-        <label for="bathrooms">Bath</label>
+      <div class="form-group col-md-1 p-1 pl-3">
         <input
           type="number"
           name="bathrooms"
           v-model="state.newHome.bathrooms"
           class="form-control"
-          placeholder="Bathrooms..."
+          placeholder="Baths..."
           required
           />
       </div>
-      <div class="form-group">
-        <label for="price">Price</label>
+      <div class="form-group col-md-1 p-1 pl-3">
         <input
           type="number"
           name="price"
@@ -63,18 +59,19 @@
           min="1"
         />
       </div>
-      <div class="form-group">
-        <label for="imgUrl">Image Url</label>
+      <div class="form-group col-md-5 p-1 pl-3">
         <input
           type="text"
           name="imgUrl"
           v-model="state.newHome.imgUrl"
           class="form-control"
-          placeholder="Url..."
+          placeholder="Image Url..."
         />
       </div>
-      <div class="form-group">
-        <label for="description">Description</label>
+      <div class="col-md-1.5 pt-1 pl-1 sm-order-last">
+        <button type="submit" class="btn btn-success">Add Home</button>
+      </div>
+      <div class="form-group col-md-12 px-3">
         <input
           type="text"
           name="description"
@@ -84,8 +81,6 @@
           maxlength="240"
         />
       </div>
-      <div class="d-flex align-items-center">
-        <button type="submit" class="btn btn-outline-success">Add</button>
       </div>
     </form>
   </div>

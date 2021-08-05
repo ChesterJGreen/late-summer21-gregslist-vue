@@ -28,6 +28,10 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
-
+<style scoped>
+.home:hover{
+  color: aqua;
+  transform: scale(1.05);
+  cursor: pointer;
+}
 </style>

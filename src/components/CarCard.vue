@@ -1,11 +1,11 @@
 <template>
-      <div class="car m-2 bg-light shadow">
+      <div class="car m-2 bg-light shadow rounded">
         <!-- passing required param ':id' -->
         <router-link :to="{name: 'CarDetails', params: {id: car.id}}">
           <img :src="car.imgUrl" class="w-100" :alt="car.make">
           <div class="p-3">
               <div class="text-center">
-                  <p><b>{{car.year}} - {{car.make}}</b></p>
+                  <p><b>{{car.year}} - {{car.make}} {{car.model}}</b></p>
               </div>
           </div>
         </router-link>
@@ -28,6 +28,11 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
+<style scoped>
+.car:hover{
+  color: aqua;
+  transform: scale(1.05);
+  cursor: pointer;
+}
 
 </style>
