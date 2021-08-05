@@ -1,5 +1,5 @@
 <template>
-  <div class="car-details-page">
+  <div class="car-details-page p-5">
     <h1>Welcome to the car details</h1>
     {{car.make}} - {{car.model}}
     <br>

@@ -34,7 +34,7 @@ export default {
       async destroy(){
         try {
           await homesService.destroy(route.params.id)
-          router.push({name: 'Home'})
+          router.push({name: 'House'})
         } catch (error) {
           console.error(error)
         }
