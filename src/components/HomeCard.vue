@@ -31,7 +31,7 @@ export default {
 <style scoped>
 .home:hover{
   color: aqua;
-  transform: scale(1.05);
+  transform: scale(1.02);
   cursor: pointer;
 }
 </style>

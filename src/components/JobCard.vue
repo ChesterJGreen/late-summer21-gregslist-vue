@@ -32,7 +32,7 @@ export default {
 
 .job:hover{
   color: aqua;
-  transform: scale(1.05);
+  transform: scale(1.02);
   cursor: pointer;
 }
 
