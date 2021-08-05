@@ -1,7 +1,7 @@
 <template>
   <header>
     <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-      <router-link :to="{name: 'Home'}" class="navbar-brand"><h1>Gregslist</h1></router-link>
+      <router-link :to="{name: 'Home'}" class="navbar-brand text"><h1>Gregslist</h1></router-link>
       <button
         class="navbar-toggler d-lg-none"
         type="button"
@@ -15,13 +15,13 @@
       <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-            <router-link class="nav-link navbar-brand" :to="{name: 'Home'}">Cars </router-link>
+            <router-link class="nav-link navbar-brand text" :to="{name: 'Home'}">Cars </router-link>
           </li>
           <li class="nav-item active">
-          <router-link class="nav-link navbar-brand" :to="{name: 'Job'}" >Jobs</router-link>
+          <router-link class="nav-link navbar-brand text" :to="{name: 'Job'}" >Jobs</router-link>
           </li>
           <li class="nav-item active">
-          <router-link class="nav-link navbar-brand" :to="{name: 'House'}" >Houses</router-link>
+          <router-link class="nav-link navbar-brand  text" :to="{name: 'House'}" >Houses</router-link>
           </li>
         </ul>
       </div>
@@ -52,12 +52,19 @@ main {
   height: 1rem;
 }
 
-.bg-img {
-  display: block;
-  background-image: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80';
-  background-position: center;
-  background-size: cover;
-  
+.text {
+  color: rgb(255, 255, 255);
+	text-shadow: -1px 1px 12px #23430C,
+			1px 1px 2px #23430C,
+       1px -1px 2px #23430C,
+      -1px -1px 2px #23430C;
 }
+.text:hover {
+  text-shadow: 1px 1px 2px black, 
+  0 0 5px rgb(253, 253, 253),
+    0 0 5px rgb(128, 4, 0);
+  cursor: pointer;
+}
+
 
 </style>
